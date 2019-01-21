@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Restaurant Finder</title>
+    </head>
+<body>
+    
+    <script>
+
+function getRestaurants() {
+  if (navigator.geolocation) {
+  
+    navigator.geolocation.getCurrentPosition(function(position)
+    {
+     result = {
+       "latitude" : position.coords.latitude,
+      "longitude" : position.coords.longitude
+     }
+window.location.href= '/getRestaurants' + '?latitude=' + result['latitude'] + '&longitude=' + result['longitude'];  
+    
+    });
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+
+  </script>
+
+
+<button onclick="getRestaurants()">Find</button>
+
+</body>
+
+
+
+</html>

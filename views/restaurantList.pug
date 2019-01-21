@@ -1,0 +1,10 @@
+head
+    title 'Restaurants List'
+body
+    for restaurant in restaurants
+        #restaurantCard
+            h2 #{restaurant.name}
+            h4 #{restaurant.address}
+            h5 Latitude is #{restaurant.latitude} . Longitude is #{restaurant.longitude}
+            img(src=restaurant.photoLink)
+            p Price for two is #{restaurant.price}
