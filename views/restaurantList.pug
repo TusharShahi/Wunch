@@ -6,5 +6,20 @@ body
             h2 #{restaurant.name}
             h4 #{restaurant.address}
             h5 Latitude is #{restaurant.latitude} . Longitude is #{restaurant.longitude}
-            img(src=restaurant.photoLink)
+            //img(src=restaurant.photoLink)
             p Price for two is #{restaurant.price}
+            p Ola Costs
+            #olaCard
+                for cost in restaurant.olaCost
+                    if cost
+                        if cost.type=='share'
+                            h3 Share
+                            p Seat - #{cost.seat}
+                            p Cost - #{cost.amount}
+                            p Saving - #{cost.savings}
+                        else
+                            h3 #{cost.type}
+                            p Min Amount - #{cost.minAmount}
+                            p Max Amount - #{cost.maxAmount}
+                            p Distance - #{cost.distance}
+                            p Time - #{cost.time}
